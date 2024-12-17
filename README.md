@@ -2,7 +2,6 @@
 
 This is a simple **Weather Service API** built with **FastAPI**. The service fetches current weather data for a given city using an external weather API (like OpenWeatherMap). It is wrapped in **Docker** for easy deployment and managed using **Docker Compose**.
 
----
 
 ## **Features**
 - 🧩 FastAPI framework for API development.
@@ -11,7 +10,6 @@ This is a simple **Weather Service API** built with **FastAPI**. The service fet
 - ⚙️ Environment-based configuration using `.env` files.
 - 🚀 Manage services using Docker Compose.
 
----
 
 ## **Setup Instructions**
 ### 1. Register at [OpenWeatherMap](https://openweathermap.org/guide)
