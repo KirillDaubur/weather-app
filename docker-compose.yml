@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  api:
+    container_name: weather-api
+    restart: unless-stopped
+    env_file:
+      - .env
+    build:
+      dockerfile: Dockerfile
+    image: weather-api
+    depends_on:
+      - memcached
+
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000"]
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+    networks:
+      - backend
+
+  memcached:
+    image: memcached:latest
+    restart: unless-stopped
+    container_name: weather-app-memcached
+    ports:
+      - "11211:11211"
+    entrypoint:
+      - memcached
+      - -m 64
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
