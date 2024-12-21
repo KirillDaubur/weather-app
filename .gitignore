@@ -1,4 +1,5 @@
 .env*
-storage
+.storage
 .venv
 .idea
+db_data
