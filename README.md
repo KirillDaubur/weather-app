@@ -72,3 +72,13 @@ In case of production set up you don't need to run support services, so just run
 
 <pre>
 docker compose up -d api --build</pre>
+
+## **Your implementations**
+
+In case you would like to replace any of services used here, please implement the appropriate interface.
+The interface is located under the *services -> [service-name] -> base_[service-name].py*.
+
+If your implementation requires new environment, please add new properties to Settings class in *settings.py*.
+For the property name use the same value as the appropriate env has in *.env* file, but in lowercase.
+
+
